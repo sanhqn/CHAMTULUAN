@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngân Hàng Câu Hỏi Tự Luận - Thầy Sah</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background-color: #0f0c1b;
+        color: #38bdf8;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      .custom-card {
+        background: rgba(26, 21, 47, 0.95);
+        border: 1px solid rgba(56, 189, 248, 0.3);
+      }
+    </style>
+</head>
+<body class="min-h-screen py-8 px-4 flex flex-col items-center">
+
+    <div class="max-w-4xl w-full mx-auto space-y-6">
+        
+        <!-- HEADER -->
+        <div class="flex justify-between items-center bg-[#1a152f] p-4 rounded-xl border border-cyan-500/30">
+            <h1 class="text-xl font-bold text-cyan-400 uppercase tracking-wider">✍️ Ngân Hàng Câu Hỏi Tự Luận</h1>
+            <a href="index.html" class="px-3 py-1.5 bg-[#0f0c1b] border border-cyan-500/30 rounded-lg text-sm text-cyan-300 hover:bg-cyan-950 transition">
+                ← Về Trang Chủ
+            </a>
+        </div>
+
+        <!-- PHẦN 1: THÔNG TIN HỌC SINH -->
+        <div class="custom-card p-6 rounded-2xl shadow-xl space-y-4">
+            <h2 class="text-lg font-semibold text-cyan-300 border-b border-cyan-500/20 pb-2">1. Thông tin học sinh</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block text-xs uppercase font-semibold text-cyan-400 mb-1">Mã học sinh</label>
+                    <input type="text" id="ma-hs" placeholder="Ví dụ: HS101" class="w-full bg-[#0f0c1b] border border-cyan-500/30 rounded-lg p-2.5 text-cyan-100 focus:outline-none focus:border-cyan-400">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase font-semibold text-cyan-400 mb-1">Họ và tên *</label>
+                    <input type="text" id="ho-ten" placeholder="Nhập họ và tên..." class="w-full bg-[#0f0c1b] border border-cyan-500/30 rounded-lg p-2.5 text-cyan-100 focus:outline-none focus:border-cyan-400">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase font-semibold text-cyan-400 mb-1">Mã đề *</label>
+                    <select id="ma-de" class="w-full bg-[#0f0c1b] border border-cyan-500/30 rounded-lg p-2.5 text-cyan-100 focus:outline-none focus:border-cyan-400">
+                        <option value="DE-12-021">DE-12-021</option>
+                        <option value="DE-12-002">DE-12-002</option>
+                        <option value="DE-12-001">DE-12-001</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHẦN 2: BÀI LÀM -->
+        <div class="custom-card p-6 rounded-2xl shadow-xl space-y-4">
+            <h2 class="text-lg font-semibold text-cyan-300 border-b border-cyan-500/20 pb-2">2. Bài làm</h2>
+            
+            <div id="khung-cau-hoi" class="p-4 bg-[#0f0c1b] rounded-xl border border-cyan-500/20 space-y-3">
+                <p class="text-sm text-cyan-300">Đang tải đề thi từ hệ thống...</p>
+            </div>
+
+            <button onclick="nopBai()" class="w-full py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-semibold rounded-xl shadow-lg transition">
+                🚀 Nộp Bài Trực Tuyến
+            </button>
+            <div id="thong-bao-nop" class="text-center text-sm font-semibold"></div>
+        </div>
+
+    </div>
+
+    <script>
+        // 🔗 DÁN ĐƯỜNG LINK WEB APP (EXEC) CỦA PHẦN NỘP BÀI VÀO ĐÂY:
+        const SUBMIT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyJvaju6h8S-zqghzsQvUPyO9a_R50sLMMuGxSabVJYe-1ADTZrEevYXrLj5I5XQxiM/exec";
+
+        function taiDeThi() {
+            // Logic tải câu hỏi từ Google Apps Script nếu cần
+            document.getElementById("khung-cau-hoi").innerHTML = `
+                <div class="space-y-2">
+                    <span class="text-xs px-2 py-1 bg-cyan-950 text-cyan-400 rounded border border-cyan-500/30">Câu 1 — G12-HS-021</span>
+                    <p class="text-sm text-cyan-100">Một chất điểm chuyển động trên đường thẳng. Tìm thời điểm vận tốc đạt giá trị lớn nhất...</p>
+                    <input type="text" placeholder="Nhập đáp án hoặc dán link ảnh bài làm..." class="w-full bg-[#151026] border border-cyan-500/30 rounded-lg p-2 text-sm text-cyan-100">
+                </div>
+            `;
+        }
+
+        function nopBai() {
+            const hoTen = document.getElementById("ho-ten").value;
+            const thongBao = document.getElementById("thong-bao-nop");
+
+            if (!hoTen) {
+                thongBao.innerHTML = "❌ Vui lòng nhập họ và tên trước khi nộp bài!";
+                thongBao.className = "text-center text-sm font-semibold text-red-400";
+                return;
+            }
+
+            thongBao.innerHTML = "⏳ Đang gửi bài làm về hệ thống Google Sheets...";
+            thongBao.className = "text-center text-sm font-semibold text-yellow-400";
+
+            // Gửi dữ liệu qua fetch tới Web App của Apps Script
+            /*
+            fetch(SUBMIT_WEB_APP_URL, {
+                method: 'POST',
+                body: JSON.stringify({ hoTen: hoTen, ... })
+            })...
+            */
+            setTimeout(() => {
+                thongBao.innerHTML = "✅ Nộp bài thành công! Hệ thống đã ghi nhận kết quả.";
+                thongBao.className = "text-center text-sm font-semibold text-green-400";
+            }, 1000);
+        }
+
+        window.onload = taiDeThi;
+    </script>
+</body>
+</html>
