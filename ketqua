@@ -1,0 +1,44 @@
+<!DOCTYPE html
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tra Cứu Kết Quả Chấm Bài</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#0f0c1b] text-[#38bdf8] p-6">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-xl font-bold mb-4">Kết Quả Chấm Bài Tự Luận</h1>
+        
+        <!-- Nút tải dữ liệu từ Google Sheets lên giao diện GitHub -->
+        <button onclick="taiDuLieu()" class="bg-cyan-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-cyan-500 transition">
+            Tải Dữ Liệu Kết Quả
+        </button>
+
+        <div id="hien-thi-ket-qua" class="mt-4 p-4 bg-[#1a152f] rounded-xl border border-cyan-500/30">
+            Đang chờ tải dữ liệu...
+        </div>
+    </div>
+
+    <script>
+        // 🔗 DÁN ĐƯỜNG LINK WEB APP CỦA THẦY VÀO ĐÂY:
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzK8i5tx4bhP5eu95SAbbMh920QQYq40UaIaSm2WALf7vAsd-HYnAcyXSWYTohuf1f9/exec";
+
+        function taiDuLieu() {
+            const khungKetQua = document.getElementById("hien-thi-ket-qua");
+            khungKetQua.innerHTML = "Đang kết nối lấy dữ liệu từ Google Sheets...";
+
+            fetch(WEB_APP_URL)
+                .then(response => response.json())
+                .then(data => {
+                    // Xử lý hiển thị dữ liệu trả về từ Apps Script lên giao diện GitHub
+                    console.log(data);
+                    khungKetQua.innerHTML = "<p class='text-green-400'>Đã kết nối và lấy dữ liệu thành công!</p>";
+                })
+                .catch(error => {
+                    console.error("Lỗi:", error);
+                    khungKetQua.innerHTML = "<p class='text-red-400'>Không thể tải dữ liệu. Thầy kiểm tra lại quyền truy cập Web App nhé.</p>";
+                });
+        }
+    </script>
+</body>
+</html>
