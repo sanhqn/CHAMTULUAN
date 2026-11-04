@@ -3,147 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nộp Bài Tự Luận Toán 12 - Thầy Sah</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Nộp Bài Tự Luận - Thầy Sah</title>
     <style>
-      body {
-        background-color: #0f0c1b;
-        color: #38bdf8;
-        font-family: system-ui, -apple-system, sans-serif;
-      }
-      .custom-card {
-        background: rgba(26, 21, 47, 0.95);
-        border: 1px solid rgba(56, 189, 248, 0.3);
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #0f0c1b;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
     </style>
 </head>
-<body class="min-h-screen py-8 px-4 flex flex-col items-center">
+<body>
 
-    <div class="max-w-4xl w-full mx-auto space-y-6">
-        
-        <!-- HEADER -->
-        <div class="flex justify-between items-center bg-[#1a152f] p-4 rounded-xl border border-cyan-500/30">
-            <h1 class="text-xl font-bold text-cyan-400 uppercase tracking-wider">📝 Nộp Bài Tự Luận Toán 12</h1>
-            <a href="index.html" class="px-3 py-1.5 bg-[#0f0c1b] border border-cyan-500/30 rounded-lg text-sm text-cyan-300 hover:bg-cyan-950 transition">
-                ← Về Trang Chủ
-            </a>
-        </div>
+    <!-- THẦY THAY ĐƯỜNG LINK EXEC CỦA APP NỘP BÀI VÀO CHỖ SRC BÊN DƯỚI -->
+    <iframe src="https://script.google.com/macros/s/AKfycbyJvaju6h8S-zqghzsQvUPyO9a_R50sLMMuGxSabVJYe-1ADTZrEevYXrLj5I5XQxiM/exec"></iframe>
 
-        <!-- PHẦN 1: THÔNG TIN HỌC SINH -->
-        <div class="custom-card p-6 rounded-2xl shadow-xl space-y-4">
-            <h2 class="text-lg font-semibold text-cyan-300 border-b border-cyan-500/20 pb-2">1. Thông tin học sinh</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div>
-                    <label class="block text-xs uppercase font-semibold text-cyan-400 mb-1">Mã học sinh</label>
-                    <input type="text" id="ma-hs" placeholder="Ví dụ: HS101" class="w-full bg-[#0f0c1b] border border-cyan-500/30 rounded-lg p-2.5 text-cyan-100 focus:outline-none focus:border-cyan-400">
-                </div>
-                <div>
-                    <label class="block text-xs uppercase font-semibold text-cyan-400 mb-1">Họ và tên *</label>
-                    <input type="text" id="ho-ten" placeholder="Nhập họ và tên..." class="w-full bg-[#0f0c1b] border border-cyan-500/30 rounded-lg p-2.5 text-cyan-100 focus:outline-none focus:border-cyan-400">
-                </div>
-                <div>
-                    <label class="block text-xs uppercase font-semibold text-cyan-400 mb-1">Mã đề *</label>
-                    <select id="ma-de" class="w-full bg-[#0f0c1b] border border-cyan-500/30 rounded-lg p-2.5 text-cyan-100 focus:outline-none focus:border-cyan-400">
-                        <option value="DE-12-021">DE-12-021</option>
-                        <option value="DE-12-002">DE-12-002</option>
-                        <option value="DE-12-001">DE-12-001</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-
-        <!-- PHẦN 2: BÀI LÀM CHI TIẾT -->
-        <div class="custom-card p-6 rounded-2xl shadow-xl space-y-6">
-            <h2 class="text-lg font-semibold text-cyan-300 border-b border-cyan-500/20 pb-2">2. Bài làm (Theo từng câu hỏi)</h2>
-            
-            <!-- DANH SÁCH CÂU HỎI & UPLOAD ẢNH -->
-            <div id="danh-sach-cau-hoi" class="space-y-6">
-                
-                <!-- CÂU 1 -->
-                <div class="p-4 bg-[#0f0c1b] rounded-xl border border-cyan-500/20 space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs px-2.5 py-1 bg-cyan-950 text-cyan-400 rounded-md border border-cyan-500/30 font-semibold">Câu 1 — G12-HS-021</span>
-                        <span class="text-xs text-cyan-400/70">Chủ đề: Khảo sát hàm số | Điểm: 1.0</span>
-                    </div>
-                    <p class="text-sm text-cyan-100 leading-relaxed">
-                        Cho hàm số $y = -t^3 + 6t^2 + 9t$, trong đó $t$ (giây) là thời gian tính từ lúc bắt đầu chuyển động ($t > 0$). Tìm thời điểm vận tốc của chất điểm đạt giá trị lớn nhất?
-                    </p>
-                    
-                    <!-- Khung nhập đáp án / tải ảnh -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
-                        <div>
-                            <label class="block text-xs text-cyan-400 mb-1">Đáp số / Kết quả ngắn gọn:</label>
-                            <input type="text" placeholder="Nhập đáp số..." class="w-full bg-[#151026] border border-cyan-500/30 rounded-lg p-2 text-sm text-cyan-100 focus:outline-none focus:border-cyan-400">
-                        </div>
-                        <div>
-                            <label class="block text-xs text-cyan-400 mb-1">Tải lên ảnh chụp bài làm (hoặc dán link ảnh):</label>
-                            <div class="flex items-center space-x-2">
-                                <input type="file" accept="image/*" class="w-full text-xs text-cyan-300 file:mr-2 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-cyan-900 file:text-cyan-200 hover:file:bg-cyan-800 cursor-pointer bg-[#151026] border border-cyan-500/30 rounded-lg">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CÂU 2 -->
-                <div class="p-4 bg-[#0f0c1b] rounded-xl border border-cyan-500/20 space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs px-2.5 py-1 bg-cyan-950 text-cyan-400 rounded-md border border-cyan-500/30 font-semibold">Câu 2 — G12-HS-002</span>
-                        <span class="text-xs text-cyan-400/70">Chủ đề: Cực trị hàm số | Điểm: 1.0</span>
-                    </div>
-                    <p class="text-sm text-cyan-100 leading-relaxed">
-                        Tìm các điểm cực trị của hàm số $y = x^3 - 3x^2 + 2$.
-                    </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
-                        <div>
-                            <label class="block text-xs text-cyan-400 mb-1">Đáp số / Kết quả ngắn gọn:</label>
-                            <input type="text" placeholder="Nhập đáp số..." class="w-full bg-[#151026] border border-cyan-500/30 rounded-lg p-2 text-sm text-cyan-100 focus:outline-none focus:border-cyan-400">
-                        </div>
-                        <div>
-                            <label class="block text-xs text-cyan-400 mb-1">Tải lên ảnh chụp bài làm (hoặc dán link ảnh):</label>
-                            <input type="file" accept="image/*" class="w-full text-xs text-cyan-300 file:mr-2 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-cyan-900 file:text-cyan-200 hover:file:bg-cyan-800 cursor-pointer bg-[#151026] border border-cyan-500/30 rounded-lg">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- NÚT NỘP BÀI -->
-            <div class="pt-4 border-t border-cyan-500/20">
-                <button onclick="nopBai()" class="w-full py-3.5 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-xl shadow-lg transition tracking-wide">
-                    🚀 Nộp Bài Trực Tuyến Về Hệ Thống
-                </button>
-                <div id="thong-bao-nop" class="text-center text-sm font-semibold mt-3"></div>
-            </div>
-        </div>
-
-    </div>
-
-    <script>
-        // 🔗 ĐƯỜNG LINK WEB APP NHẬN BÀI CỦA THẦY
-        const SUBMIT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyJvaju6h8S-zqghzsQvUPyO9a_R50sLMMuGxSabVJYe-1ADTZrEevYXrLj5I5XQxiM/exec";
-
-        function nopBai() {
-            const hoTen = document.getElementById("ho-ten").value;
-            const maHS = document.getElementById("ma-hs").value;
-            const thongBao = document.getElementById("thong-bao-nop");
-
-            if (!hoTen) {
-                thongBao.innerHTML = "❌ Vui lòng nhập họ và tên học sinh trước khi nộp bài!";
-                thongBao.className = "text-center text-sm font-semibold text-red-400";
-                return;
-            }
-
-            thongBao.innerHTML = "⏳ Đang nộp bài và tải ảnh lên hệ thống Google Sheets...";
-            thongBao.className = "text-center text-sm font-semibold text-yellow-400";
-
-            // Giả lập gửi thành công (Thầy có thể kết nối hàm fetch POST sang Apps Script ở đây)
-            setTimeout(() => {
-                thongBao.innerHTML = "✅ Nộp bài thành công! Hệ thống đã ghi nhận bài làm của em.";
-                thongBao.className = "text-center text-sm font-semibold text-green-400";
-            }, 1200);
-        }
-    </script>
 </body>
 </html>
