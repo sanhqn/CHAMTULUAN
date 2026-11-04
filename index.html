@@ -1,1 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cổng Trực Tuyến Toán 12 - Thầy Sah</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #0f0c1b;
+      color: #38bdf8;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .custom-card {
+      background: rgba(26, 21, 47, 0.95);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+    .menu-btn {
+      transition: all 0.25s ease;
+    }
+    .menu-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4);
+      background-color: rgba(8, 47, 73, 0.6);
+    }
+  </style>
+</head>
+<body class="min-h-screen py-10 px-4 flex flex-col items-center justify-center">
 
+  <div class="max-w-xl w-full mx-auto text-center">
+    
+    <!-- HEADER & LOGO -->
+    <div class="mb-8">
+      <div class="inline-block p-1.5 bg-[#1a152f] rounded-full border border-cyan-500/40 shadow-lg mb-4">
+        <img src="https://i.imgur.com/7b7X8e3.png" alt="Logo Thầy Sah" class="w-20 h-20 rounded-full object-cover">
+      </div>
+      <h1 class="text-2xl font-bold text-cyan-400 tracking-wider uppercase">THẦY SAH - TOÁN HỌC 12</h1>
+      <p class="text-sm text-cyan-300/70 mt-1">Hệ thống Đánh giá & Trắc nghiệm Thông minh</p>
+    </div>
+
+    <!-- BẢNG ĐIỀU KHIỂN CHUNG (4 NÚT CHỨC NĂNG) -->
+    <div class="custom-card p-6 md:p-8 rounded-2xl space-y-4 text-left">
+      <h2 class="text-xs text-cyan-400 font-semibold uppercase tracking-widest mb-4 pb-2 border-b border-cyan-500/20 text-center">
+        BẢNG ĐIỀU KHIỂN HỆ THỐNG
+      </h2>
+
+      <!-- Nút 1: Nhập đề -->
+      <a href="nhap-de.html" class="menu-btn block w-full p-4 bg-[#1a152f] border border-cyan-500/30 rounded-xl text-cyan-200 font-semibold flex justify-between items-center">
+        <span class="flex items-center space-x-3">
+          <span class="text-xl">📥</span>
+          <span>1. Nhập Đề Thi & Quản Lý</span>
+        </span>
+        <span class="text-cyan-400 text-sm">Truy cập →</span>
+      </a>
+
+      <!-- Nút 2: Nộp bài -->
+      <a href="nop-bai.html" class="menu-btn block w-full p-4 bg-[#1a152f] border border-cyan-500/30 rounded-xl text-cyan-200 font-semibold flex justify-between items-center">
+        <span class="flex items-center space-x-3">
+          <span class="text-xl">✍️</span>
+          <span>2. Làm Bài & Nộp Bài Trực Tuyến</span>
+        </span>
+        <span class="text-cyan-400 text-sm">Vào thi →</span>
+      </a>
+
+      <!-- Nút 3: Kết quả -->
+      <a href="ket-qua.html" class="menu-btn block w-full p-4 bg-[#1a152f] border border-cyan-500/30 rounded-xl text-cyan-200 font-semibold flex justify-between items-center">
+        <span class="flex items-center space-x-3">
+          <span class="text-xl">📊</span>
+          <span>3. Tra Cứu Kết Quả & Thống Kê</span>
+        </span>
+        <span class="text-cyan-400 text-sm">Xem →</span>
+      </a>
+
+      <!-- Nút 4: Hướng dẫn -->
+      <a href="huong-dan.html" class="menu-btn block w-full p-4 bg-[#1a152f] border border-cyan-500/30 rounded-xl text-cyan-200 font-semibold flex justify-between items-center">
+        <span class="flex items-center space-x-3">
+          <span class="text-xl">📖</span>
+          <span>4. Hướng Dẫn Sử Dụng Cho Học Sinh</span>
+        </span>
+        <span class="text-cyan-400 text-sm">Đọc →</span>
+      </a>
+
+      <!-- Bổ sung lối tắt xem Mô hình 3D -->
+      <div class="pt-2 border-t border-cyan-500/10">
+        <a href="hinhchop.html" class="menu-btn block w-full p-3 bg-cyan-950/40 border border-cyan-500/20 rounded-xl text-cyan-300 text-sm font-medium flex justify-between items-center">
+          <span>🧊 Khám phá Mô hình 3D Không gian</span>
+          <span>Xem →</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="mt-8 text-xs text-cyan-500/60">
+      Sáng kiến Kho học liệu số • Trường Cao đẳng Lương thực - Thực phẩm
+    </div>
+
+  </div>
+
+</body>
+</html>
