@@ -1,42 +1,68 @@
-<!DOCTYPE html
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Tra Cứu Kết Quả Chấm Bài</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra Cứu Kết Quả - Thầy Sah</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background-color: #0f0c1b;
+        color: #38bdf8;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      .custom-card {
+        background: rgba(26, 21, 47, 0.95);
+        border: 1px solid rgba(56, 189, 248, 0.3);
+      }
+    </style>
 </head>
-<body class="bg-[#0f0c1b] text-[#38bdf8] p-6">
-    <div class="max-w-4xl mx-auto">
-        <h1 class="text-xl font-bold mb-4">Kết Quả Chấm Bài Tự Luận</h1>
-        
-        <!-- Nút tải dữ liệu từ Google Sheets lên giao diện GitHub -->
-        <button onclick="taiDuLieu()" class="bg-cyan-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-cyan-500 transition">
-            Tải Dữ Liệu Kết Quả
-        </button>
+<body class="min-h-screen py-10 px-4 flex flex-col items-center">
 
-        <div id="hien-thi-ket-qua" class="mt-4 p-4 bg-[#1a152f] rounded-xl border border-cyan-500/30">
-            Đang chờ tải dữ liệu...
+    <div class="max-w-3xl w-full mx-auto">
+        
+        <!-- HEADER -->
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-xl font-bold text-cyan-400 uppercase tracking-wider">📊 Tra Cứu Kết Quả Chấm Bài</h1>
+            <a href="index.html" class="px-3 py-1.5 bg-[#1a152f] border border-cyan-500/30 rounded-lg text-sm text-cyan-300 hover:bg-cyan-950">
+                ← Về Trang Chủ
+            </a>
         </div>
+
+        <!-- KHUNG CHỨC NĂNG -->
+        <div class="custom-card p-6 rounded-2xl shadow-xl space-y-4">
+            <button onclick="taiDuLieu()" class="w-full py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-semibold rounded-xl shadow-lg transition">
+                Tải Dữ Liệu Kết Quả Từ Hệ Thống
+            </button>
+
+            <!-- NƠI HIỂN THỊ KẾT QUẢ -->
+            <div id="hien-thi-ket-qua" class="p-4 bg-[#0f0c1b] rounded-xl border border-cyan-500/20 text-sm min-h-[150px] text-cyan-200">
+                Nhấn nút "Tải Dữ Liệu Kết Quả" ở trên để xem danh sách...
+            </div>
+        </div>
+
     </div>
 
     <script>
-        // 🔗 DÁN ĐƯỜNG LINK WEB APP CỦA THẦY VÀO ĐÂY:
+        // 🔗 DÁN ĐƯỜNG LINK WEB APP (EXEC) CỦA THẦY VÀO DƯỚI ĐÂY:
         const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzK8i5tx4bhP5eu95SAbbMh920QQYq40UaIaSm2WALf7vAsd-HYnAcyXSWYTohuf1f9/exec";
 
         function taiDuLieu() {
             const khungKetQua = document.getElementById("hien-thi-ket-qua");
-            khungKetQua.innerHTML = "Đang kết nối lấy dữ liệu từ Google Sheets...";
+            khungKetQua.innerHTML = "<span class='text-yellow-400'>Đang kết nối lấy dữ liệu từ Google Sheets, thầy vui lòng đợi chút...</span>";
 
             fetch(WEB_APP_URL)
                 .then(response => response.json())
                 .then(data => {
-                    // Xử lý hiển thị dữ liệu trả về từ Apps Script lên giao diện GitHub
-                    console.log(data);
-                    khungKetQua.innerHTML = "<p class='text-green-400'>Đã kết nối và lấy dữ liệu thành công!</p>";
+                    console.log("Dữ liệu nhận về:", data);
+                    // Hiển thị thông báo thành công tạm thời
+                    khungKetQua.innerHTML = "<p class='text-green-400 font-semibold mb-2'>✅ Đã kết nối và tải dữ liệu thành công!</p>" +
+                                            "<pre class='text-xs text-cyan-300 overflow-x-auto'>" + JSON.stringify(data, null, 2) + "</pre>";
                 })
                 .catch(error => {
                     console.error("Lỗi:", error);
-                    khungKetQua.innerHTML = "<p class='text-red-400'>Không thể tải dữ liệu. Thầy kiểm tra lại quyền truy cập Web App nhé.</p>";
+                    khungKetQua.innerHTML = "<p class='text-red-400'>❌ Không thể tải dữ liệu. Thầy kiểm tra lại đường link Web App hoặc quyền 'Anyone' trong Apps Script nhé.</p>";
                 });
         }
     </script>
