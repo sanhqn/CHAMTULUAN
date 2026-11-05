@@ -3,111 +3,530 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hướng Dẫn Dành Cho Học Sinh</title>
+    <title>Hướng Dẫn Sử Dụng Ứng Dụng - Thầy Sah</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #0f0c1b; font-family: 'Segoe UI', Roboto, sans-serif; color: #e2e8f0; padding: 20px 12px; }
-        .container { max-width: 850px; margin: 0 auto; background: linear-gradient(135deg, #1a152f, #0f0c1b); padding: 30px 24px; border-radius: 14px; border: 1px solid rgba(56, 189, 248, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
-        .header-bar { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid rgba(56, 189, 248, 0.25); padding-bottom: 16px; margin-bottom: 24px; }
-        .header-title { color: #38bdf8; font-size: 18px; font-weight: 800; text-transform: uppercase; }
-        .btn-home { padding: 8px 16px; background-color: #0f0c1b; color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 8px; text-decoration: none; font-size: 13.5px; font-weight: 600; transition: all 0.2s; }
-        .btn-home:hover { background-color: #38bdf8; color: #0f0c1b; }
-        h1.doc-title { text-align: center; color: #a78bfa; font-size: 22px; font-weight: bold; margin-bottom: 6px; }
-        .doc-subtitle { text-align: center; color: #94a3b8; font-size: 14px; margin-bottom: 25px; font-style: italic; }
-        h2.part-title { color: #38bdf8; background: rgba(56, 189, 248, 0.1); padding: 10px 14px; border-left: 5px solid #38bdf8; border-radius: 0 8px 8px 0; font-size: 17px; font-weight: bold; margin-top: 25px; margin-bottom: 16px; }
-        p, li { line-height: 1.65; font-size: 14.5px; color: #cbd5e1; }
-        ul, ol { padding-left: 20px; margin-bottom: 15px; }
-        .table-responsive { overflow-x: auto; margin: 15px 0 25px 0; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1); }
-        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; }
-        th { background-color: #2e2354; color: #38bdf8; font-weight: 700; padding: 12px; border-bottom: 2px solid rgba(56, 189, 248, 0.3); }
-        td { padding: 10px 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); background-color: rgba(26, 21, 47, 0.6); }
-        .note-box { background: rgba(234, 179, 8, 0.1); border-left: 4px solid #eab308; padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 15px 0; color: #fef08a; font-size: 14px; }
+        body {
+            background-color: #0f0c1b;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #e2e8f0;
+            padding: 20px 12px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1a152f, #0f0c1b);
+            padding: 30px 24px;
+            border-radius: 14px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid rgba(56, 189, 248, 0.25);
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+        .header-title {
+            color: #38bdf8;
+            font-size: 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .btn-home {
+            padding: 8px 16px;
+            background-color: #0f0c1b;
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .btn-home:hover {
+            background-color: #38bdf8;
+            color: #0f0c1b;
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+        }
+        h1.doc-title {
+            text-align: center;
+            color: #a78bfa;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+        .doc-subtitle {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+        h2.part-title {
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.1);
+            padding: 10px 14px;
+            border-left: 5px solid #38bdf8;
+            border-radius: 0 8px 8px 0;
+            font-size: 17px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+        h3.section-title {
+            color: #c084fc;
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        p, li {
+            line-height: 1.65;
+            font-size: 14.5px;
+            color: #cbd5e1;
+        }
+        ul, ol {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        /* Style Bảng biểu */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 15px 0 25px 0;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background-color: #2e2354;
+            color: #38bdf8;
+            font-weight: 700;
+            padding: 12px;
+            border-bottom: 2px solid rgba(56, 189, 248, 0.3);
+        }
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background-color: rgba(26, 21, 47, 0.6);
+        }
+        tr:hover td {
+            background-color: rgba(124, 77, 255, 0.1);
+        }
+        /* Khung hiển thị hình ảnh */
+        .img-container {
+            text-align: center;
+            margin: 20px 0;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px dashed rgba(168, 85, 247, 0.4);
+        }
+        .img-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            margin: 0 auto;
+        }
+        .img-caption {
+            font-size: 13px;
+            color: #a78bfa;
+            margin-top: 8px;
+            font-style: italic;
+            font-weight: 500;
+        }
+        .note-box {
+            background: rgba(234, 179, 8, 0.1);
+            border-left: 4px solid #eab308;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+            color: #fef08a;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
+
     <div class="container">
+        <!-- THANH ĐIỀU HƯỚNG TRÊN CÙNG -->
         <div class="header-bar">
-            <div class="header-title">📖 HƯỚNG DẪN HỌC SINH</div>
+            <div class="header-title">⚡ HỆ THỐNG GIÁO DỤC SAH</div>
             <a href="index.html" class="btn-home">← Về Trang Chủ</a>
         </div>
 
-        <h1 class="doc-title">HƯỚNG DẪN NỘP BÀI VÀ XEM KẾT QUẢ</h1>
-        <div class="doc-subtitle">Môn Toán – Trường Cao đẳng Lương thực – Thực phẩm[cite: 2]</div>
+        <!-- TIÊU ĐỀ TÀI LIỆU -->
+        <h1 class="doc-title">HƯỚNG DẪN SỬ DỤNG ỨNG DỤNG<br>NGÂN HÀNG CÂU HỎI VÀ CHẤM BÀI TỰ LUẬN BẰNG AI</h1>
+        <div class="doc-subtitle">Môn Toán – Trường Cao đẳng Lương thực – Thực phẩm<br>(Phụ lục của sáng kiến kinh nghiệm)</div>
 
-        <h2 class="part-title">1. Chuẩn bị bài làm</h2>
+        <!-- GIỚI THIỆU CHUNG -->
+        <h3 class="section-title">📌 GIỚI THIỆU CHUNG</h3>
+        <p>Ứng dụng giúp giáo viên quản lý ngân hàng câu hỏi tự luận, nhận bài làm của học sinh, chấm sơ bộ bằng AI (Gemini) theo rubric, lưu kết quả vào Google Sheets và thống kê để rà soát, chốt điểm. Tài liệu chia thành hai phần độc lập, có thể phát riêng:</p>
+
         <div class="table-responsive">
             <table>
                 <thead>
                     <tr>
-                        <th style="width: 50%; color: #4ade80;">Nên làm[cite: 2]</th>
-                        <th style="width: 50%; color: #f87171;">Không nên[cite: 2]</th>
+                        <th style="width: 20%;">Phần</th>
+                        <th>Đối tượng và nội dung</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Viết chữ rõ, mực đậm, trình bày đủ các bước giải, mỗi bước một dòng[cite: 2].</td>
-                        <td>Viết chồng chéo, gạch xóa nhiều, bỏ bước giải[cite: 2].</td>
+                        <td><strong>Phần I</strong></td>
+                        <td>Dành cho học sinh: chụp bài, nộp bài, xem kết quả.</td>
                     </tr>
                     <tr>
-                        <td>Ghi rõ số câu ở đầu mỗi lời giải[cite: 2].</td>
-                        <td>Bỏ sót câu hoặc ghi sai số câu[cite: 2].</td>
-                    </tr>
-                    <tr>
-                        <td>Chụp bằng điện thoại, thẳng góc, đủ sáng, thấy rõ toàn bộ trang giấy[cite: 2].</td>
-                        <td>Chụp nghiêng, mờ, ngược sáng, cắt mất lề[cite: 2].</td>
-                    </tr>
-                    <tr>
-                        <td>Mỗi trang một ảnh, sắp xếp ảnh đúng thứ tự trang[cite: 2].</td>
-                        <td>Gộp nhiều trang vào một ảnh, để ảnh lộn thứ tự[cite: 2].</td>
+                        <td><strong>Phần II</strong></td>
+                        <td>Dành cho giáo viên: chuẩn bị ngân hàng câu hỏi, tổ chức nộp bài, theo dõi, rà soát và chốt điểm.</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <h2 class="part-title">2. Các bước nộp bài trực tuyến</h2>
-        <p>Học sinh nộp bài trực tiếp trên trang nộp bài của lớp, không cần đăng nhập. Có thể chụp và nộp ngay trên điện thoại, nộp nhiều ảnh cùng một lúc tương ứng với từng câu[cite: 2].</p>
+        <!-- PHẦN I: DÀNH CHO HỌC SINH -->
+        <h2 class="part-title">PHẦN I. HƯỚNG DẪN DÀNH CHO HỌC SINH</h2>
+
+        <h3 class="section-title">1. Chuẩn bị bài làm</h3>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 50%; color: #4ade80;">Nên làm</th>
+                        <th style="width: 50%; color: #f87171;">Không nên</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Viết chữ rõ, mực đậm, trình bày đủ các bước giải, mỗi bước một dòng.</td>
+                        <td>Viết chồng chéo, gạch xóa nhiều, bỏ bước giải.</td>
+                    </tr>
+                    <tr>
+                        <td>Ghi rõ số câu ở đầu mỗi lời giải.</td>
+                        <td>Bỏ sót câu hoặc ghi sai số câu.</td>
+                    </tr>
+                    <tr>
+                        <td>Chụp bằng điện thoại, thẳng góc, đủ sáng, thấy rõ toàn bộ trang giấy.</td>
+                        <td>Chụp nghiêng, mờ, ngược sáng, cắt mất lề.</td>
+                    </tr>
+                    <tr>
+                        <td>Mỗi trang một ảnh, sắp xếp ảnh đúng thứ tự trang.</td>
+                        <td>Gộp nhiều trang vào một ảnh, để ảnh lộn thứ tự.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="section-title">2. Nộp bài</h3>
+        <p>Học sinh nộp bài trực tiếp trên trang nộp bài của lớp, không cần đăng nhập. Có thể chụp và nộp ngay trên điện thoại, nộp nhiều ảnh cùng một lúc tương ứng với từng câu.</p>
         
         <div class="table-responsive">
             <table>
                 <thead>
                     <tr>
-                        <th style="width: 10%;">Bước[cite: 2]</th>
-                        <th style="width: 45%;">Thao tác[cite: 2]</th>
-                        <th>Lưu ý[cite: 2]</th>
+                        <th style="width: 10%;">Bước</th>
+                        <th style="width: 45%;">Thao tác</th>
+                        <th>Lưu ý</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td><strong>1</strong></td><td>Mở đường dẫn trang nộp bài do giáo viên cung cấp[cite: 2].</td><td>Dùng điện thoại hoặc máy tính đều được[cite: 2].</td></tr>
-                    <tr><td><strong>2</strong></td><td>Chọn đúng mã đề (ví dụ DE-12-001)[cite: 2].</td><td>Chọn sai mã đề thì bài bị chấm theo đáp án khác[cite: 2].</td></tr>
-                    <tr><td><strong>3</strong></td><td>Nhập đúng tên học sinh của mình[cite: 2].</td><td>Dùng họ tên, chưa dùng mã học sinh[cite: 2].</td></tr>
-                    <tr><td><strong>4</strong></td><td>Bấm chọn ảnh, chọn tất cả các trang bài làm cùng một lúc[cite: 2].</td><td>Kiểm tra số ảnh và thứ tự trang trước khi nộp[cite: 2].</td></tr>
-                    <tr><td><strong>5</strong></td><td>Bấm Nộp bài và chờ thông báo nộp thành công[cite: 2].</td><td>Không đóng trang và không bấm nộp nhiều lần[cite: 2].</td></tr>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td>Mở đường dẫn trang nộp bài do giáo viên cung cấp.</td>
+                        <td>Dùng điện thoại hoặc máy tính đều được.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td>Chọn đúng mã đề (ví dụ DE-12-001).</td>
+                        <td>Chọn sai mã đề thì bài bị chấm theo đáp án khác.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>Nhập đúng tên học sinh của mình.</td>
+                        <td>Dùng họ tên, chưa dùng mã học sinh.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>Bấm chọn ảnh, chọn tất cả các trang bài làm cùng một lúc.</td>
+                        <td>Kiểm tra số ảnh và thứ tự trang trước khi nộp.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5</strong></td>
+                        <td>Bấm Nộp bài và chờ thông báo nộp thành công.</td>
+                        <td>Không đóng trang và không bấm nộp nhiều lần.</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
 
-        <h2 class="part-title">3. Xem kết quả và xử lý sự cố</h2>
-        <p>Sau khi hệ thống chấm xong, học sinh vào trang xem kết quả, nhập <strong>Mã học sinh</strong> để xem điểm, nhận xét và lỗi sai của chính mình. Hãy đọc kỹ nhận xét, sửa lại các lỗi sai[cite: 2].</p>
-        
+        <!-- HÌNH ẢNH MINH HỌA PHẦN NỘP BÀI -->
+        <div class="img-container">
+            <img src="https://lh3.googleusercontent.com/d/1_YOUR_IMAGE_ID_HERE" alt="Giao diện trang nộp bài" onerror="this.src='https://via.placeholder.com/700x350/1a152f/38bdf8?text=Anh+Giao+Dien+Nop+Bai+Tu+Luan';">
+            <div class="img-caption">Hình 1. Giao diện trang nộp bài: chọn mã đề, nhập mã học sinh và tải bài làm</div>
+        </div>
+
+        <h3 class="section-title">3. Xem kết quả</h3>
+        <p>Sau khi hệ thống chấm xong, học sinh vào trang xem kết quả, nhập <strong>Mã học sinh</strong> để xem điểm, nhận xét và lỗi sai của chính mình. Hãy đọc kỹ nhận xét, sửa lại các lỗi sai và làm bài củng cố do giáo viên giao.</p>
+
+        <h3 class="section-title">4. Nếu gặp sự cố khi nộp</h3>
         <div class="table-responsive">
             <table>
                 <thead>
-                    <tr><th style="width: 35%;">Hiện tượng[cite: 2]</th><th>Cách xử lý[cite: 2]</th></tr>
+                    <tr>
+                        <th style="width: 35%;">Hiện tượng</th>
+                        <th>Cách xử lý</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    <tr><td>Báo lỗi hoặc không gửi được[cite: 2]</td><td>Kiểm tra mạng và thử nộp lại; nếu vẫn lỗi, báo giáo viên[cite: 2].</td></tr>
-                    <tr><td>Nộp nhầm mã đề hoặc mã học sinh[cite: 2]</td><td>Báo ngay cho giáo viên, không tự nộp lại nhiều lần[cite: 2].</td></tr>
-                    <tr><td>Quá lâu chưa có kết quả[cite: 2]</td><td>Chờ vài phút tải lại trang; nếu vẫn chưa có, báo giáo viên[cite: 2].</td></tr>
+                    <tr>
+                        <td>Báo lỗi hoặc không gửi được</td>
+                        <td>Kiểm tra kết nối mạng và thử nộp lại; nếu vẫn lỗi, báo giáo viên.</td>
+                    </tr>
+                    <tr>
+                        <td>Nộp nhầm mã đề hoặc mã học sinh</td>
+                        <td>Báo ngay cho giáo viên, không tự nộp lại nhiều lần.</td>
+                    </tr>
+                    <tr>
+                        <td>Quá lâu chưa có kết quả</td>
+                        <td>Chờ vài phút rồi tải lại trang; nếu vẫn chưa có, báo giáo viên.</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
 
         <div class="note-box">
-            📌 <strong>LƯU Ý QUAN TRỌNG:</strong><br>
-            • Chỉ nộp bài làm của chính mình, không nộp hộ bạn[cite: 2].<br>
-            • Điểm chính thức do giáo viên xác nhận; kết quả của AI chỉ là chấm sơ bộ[cite: 2].
+            📌 <strong>LƯU Ý DÀNH CHO HỌC SINH:</strong><br>
+            • Chỉ nộp bài làm của chính mình, không nộp hộ bạn.<br>
+            • Nhập đúng họ tên của học sinh khi nộp bài.<br>
+            • Điểm chính thức do giáo viên xác nhận; kết quả của AI chỉ là chấm sơ bộ.
+        </div>
+
+        <!-- PHẦN II: DÀNH CHO GIÁO VIÊN -->
+        <h2 class="part-title">PHẦN II. HƯỚNG DẪN DÀNH CHO GIÁO VIÊN</h2>
+
+        <h3 class="section-title">1. Các thành phần của hệ thống</h3>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Thành phần</th>
+                        <th>Vai trò</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Google Docs</strong></td>
+                        <td>Soạn đề, đáp án mẫu và rubric chi tiết cho từng câu hỏi.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google Sheets</strong></td>
+                        <td>Lưu ngân hàng câu hỏi/đề thi (TestPaper), danh sách học sinh (Students), kết quả chấm (Results), nhật ký hệ thống (SystemLog).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Trang nộp bài</strong></td>
+                        <td>Học sinh chọn mã đề, nhập mã, tải ảnh bài làm lên.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Apps Script + Gemini</strong></td>
+                        <td>Ghép đề, đáp án, rubric, gửi ảnh bài làm cho Gemini chấm, ghi điểm và nhận xét vào Sheet.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Trang theo dõi kết quả</strong></td>
+                        <td>Các tab Tổng quan, Kết quả, Học sinh, Đề thi, Nhật ký để giáo viên thống kê và rà soát.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="section-title">2. Chuẩn bị ngân hàng câu hỏi, đề thi và rubric</h3>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 10%;">Bước</th>
+                        <th style="width: 55%;">Thao tác</th>
+                        <th>Lưu ý</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td>Soạn câu hỏi, đáp án, thang điểm và rubric theo bước giải và nhập vào web app, hệ thống sẽ tự lưu trên Google Docs.</td>
+                        <td>Ghi rõ cách xử lý lời giải khác đáp án và lỗi sai dây chuyền.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td>Dùng công cụ đồng bộ đề để thêm câu mới từ Docs vào Sheet đề thi (TestPaper).</td>
+                        <td>Mã câu theo quy ước khối – chủ đề – số thứ tự, ví dụ G12-HS-001.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>Hoặc nhập trực tiếp bằng form ngân hàng câu hỏi trên trang web.</td>
+                        <td>Điền đủ chủ đề, mức độ, điểm tối đa.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>Kiểm tra mã đề mới đã xuất hiện ở tab Đề thi.</td>
+                        <td>Mã đề dạng DE-12-001.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5</strong></td>
+                        <td>Gửi học sinh đường dẫn nộp bài, mã đề và hạn nộp.</td>
+                        <td>Thông báo rõ hạn chót nộp bài cho lớp.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- BẢNG ĐIỂM RUBRIC MẪU -->
+        <p><strong>Ví dụ rubric chấm một câu 2,0 điểm:</strong></p>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tiêu chí</th>
+                        <th style="width: 15%;">Điểm</th>
+                        <th style="width: 55%;">Yêu cầu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Xác định đúng phương pháp, kiến thức</td>
+                        <td><strong>0,5</strong></td>
+                        <td>Nêu hoặc áp dụng đúng công thức, điều kiện.</td>
+                    </tr>
+                    <tr>
+                        <td>Biến đổi và lập luận</td>
+                        <td><strong>0,75</strong></td>
+                        <td>Các bước logic; chấp nhận cách giải khác nếu đúng.</td>
+                    </tr>
+                    <tr>
+                        <td>Tính toán chính xác</td>
+                        <td><strong>0,5</strong></td>
+                        <td>Sai số học nhỏ trừ 0,25 và không trừ lặp ở các bước sau.</td>
+                    </tr>
+                    <tr>
+                        <td>Kết luận, trình bày</td>
+                        <td><strong>0,25</strong></td>
+                        <td>Kết luận đúng yêu cầu, ký hiệu chuẩn.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="section-title">3. Đọc các chỉ số trên tab Tổng quan</h3>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Chỉ số</th>
+                        <th style="width: 35%;">Ý nghĩa</th>
+                        <th>Việc cần làm</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Tổng bài nộp</strong></td>
+                        <td>Tất cả bài đã tải lên.</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Đã chấm</strong></td>
+                        <td>Bài AI chấm xong.</td>
+                        <td>Rà soát chọn lọc.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bài lỗi cần xử lý</strong></td>
+                        <td>Chấm thất bại (ảnh hỏng, mạng, phản hồi sai định dạng…).</td>
+                        <td>Xem Nhật ký, yêu cầu nộp lại.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Đang chấm</strong></td>
+                        <td>Bài đang chờ xử lý.</td>
+                        <td>Chờ; nếu kẹt lâu thì xử lý như bài lỗi.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bài AI chưa chắc</strong></td>
+                        <td>AI không tự tin về kết quả (độ tin cậy dưới 0,7).</td>
+                        <td>Giáo viên chấm lại trực tiếp.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Điểm trung bình theo mã câu</strong></td>
+                        <td>Mức đạt của từng câu.</td>
+                        <td>Câu điểm thấp bất thường: dạy lại hoặc xem lại đề.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="section-title">4. Rà soát và chốt điểm</h3>
+        <ol>
+            <li>Vào trang theo dõi kết quả, bấm <strong>Làm mới</strong> để lấy số liệu mới nhất.</li>
+            <li>Ưu tiên rà soát bài lỗi, bài độ tin cậy thấp và kiểm tra ngẫu nhiên các bài còn lại.</li>
+            <li>Mở tab <strong>Kết quả</strong> để xem điểm từng tiêu chí, lỗi sai và nhận xét của AI.</li>
+            <li>Nếu điểm AI chưa hợp lý, chỉnh điểm và ghi chú; <strong>điểm giáo viên chốt là điểm chính thức</strong>.</li>
+            <li>Xem tab <strong>Nhật ký</strong> khi cần truy vết lỗi hoặc lịch sử chấm.</li>
+            <li>Xem điểm trung bình theo mã câu, bổ sung vào rubric các cách giải AI chấm chưa đúng.</li>
+        </ol>
+
+        <h3 class="section-title">5. Xử lý sự cố dành cho giáo viên</h3>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Hiện tượng</th>
+                        <th style="width: 35%;">Nguyên nhân có thể</th>
+                        <th>Cách xử lý</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bài báo Lỗi</td>
+                        <td>Mạng yếu; AI trả sai định dạng; ảnh hỏng.</td>
+                        <td>Xem Nhật ký, yêu cầu học sinh nộp lại.</td>
+                    </tr>
+                    <tr>
+                        <td>Bài kẹt ở Đang chấm</td>
+                        <td>Quá thời gian chờ hoặc hết hạn mức API.</td>
+                        <td>Làm mới, đợi vài phút; nếu vẫn kẹt thì nộp lại.</td>
+                    </tr>
+                    <tr>
+                        <td>AI chấm thiếu câu</td>
+                        <td>Ảnh lộn thứ tự, thiếu trang, không ghi số câu.</td>
+                        <td>Hướng dẫn học sinh ghi số câu và sắp xếp ảnh đúng thứ tự.</td>
+                    </tr>
+                    <tr>
+                        <td>Điểm thấp dù lời giải đúng</td>
+                        <td>Chữ khó đọc; rubric chưa nêu cách giải khác.</td>
+                        <td>Chấm lại thủ công, bổ sung cách giải vào rubric.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="note-box" style="background: rgba(56, 189, 248, 0.1); border-left-color: #38bdf8; color: #bae6fd;">
+            🛡️ <strong>QUY TẮC BẢO MẬT & VẬN HÀNH:</strong><br>
+            • Điểm chính thức do giáo viên xác nhận; AI chỉ hỗ trợ chấm sơ bộ.<br>
+            • Khóa API chỉ do người quản trị giữ, không chia sẻ ra ngoài.<br>
+            • Định kỳ tạo bản sao Google Sheets (hằng tuần/hằng tháng) để sao lưu an toàn.
         </div>
     </div>
+
 </body>
 </html>
